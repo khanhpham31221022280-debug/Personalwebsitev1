@@ -1,155 +1,446 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minh Anh | Personal Website</title>
+    <title>Ph&#7841;m Nguy&#7877;n Qu&#7889;c Kh&#225;nh</title>
     <meta
       name="description"
-      content="Personal portfolio website for Minh Anh. Designer, developer, and product-minded builder."
+      content="Website c&#225; nh&#226;n c&#7911;a Ph&#7841;m Nguy&#7877;n Qu&#7889;c Kh&#225;nh."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Manrope:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-shape shape-a" aria-hidden="true"></div>
-    <div class="bg-shape shape-b" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="nav">
+      <ul class="nav-inner">
+        <li>
+          <a
+            href="#"
+            class="nav-link active"
+            data-target="home"
+            data-vi="Trang ch&#7911;"
+            data-en="Home"
+            >Trang ch&#7911;</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="nav-link"
+            data-target="research"
+            data-vi="D&#7921; &#225;n"
+            data-en="Projects"
+            >D&#7921; &#225;n</a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="cv" data-vi="CV" data-en="CV">CV</a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="nav-link"
+            data-target="econometrics"
+            data-vi="T&#224;i nguy&#234;n"
+            data-en="Resources"
+            >T&#224;i nguy&#234;n</a
+          >
+        </li>
+        <li class="spacer"></li>
+        <li>
+          <button id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+        </li>
+        <li>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang-switch="vi">VI</button>
+            <button class="lang-btn" data-lang-switch="en">EN</button>
+          </div>
+        </li>
+      </ul>
 
-    <header class="site-header">
-      <a class="brand" href="#home">MA.</a>
-      <nav class="main-nav" aria-label="Main menu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="btn btn-small" href="#contact">Work With Me</a>
-    </header>
+      <div id="nav-hamburger">
+        <button id="hamburger-btn" onclick="toggleDrawer()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="mobile-right">
+          <button
+            id="theme-btn-mobile"
+            onclick="toggleTheme()"
+            aria-label="Toggle dark mode"
+          >
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang-switch="vi">VI</button>
+            <button class="lang-btn" data-lang-switch="en">EN</button>
+          </div>
+        </div>
+      </div>
 
-    <main id="home">
-      <section class="hero section reveal">
-        <p class="eyebrow">Hello, I am</p>
-        <h1>Minh Anh</h1>
-        <p class="lead">
-          I design and build digital experiences that feel human, clear, and
-          memorable.
-        </p>
-        <div class="hero-cta">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn btn-ghost" href="#contact">Say Hello</a>
+      <div id="nav-drawer">
+        <div class="drawer-title">Menu</div>
+        <a
+          href="#"
+          class="nav-link active"
+          data-target="home"
+          data-vi="Trang ch&#7911;"
+          data-en="Home"
+          >Trang ch&#7911;</a
+        >
+        <a
+          href="#"
+          class="nav-link"
+          data-target="research"
+          data-vi="D&#7921; &#225;n"
+          data-en="Projects"
+          >D&#7921; &#225;n</a
+        >
+        <a href="#" class="nav-link" data-target="cv" data-vi="CV" data-en="CV">CV</a>
+        <a
+          href="#"
+          class="nav-link"
+          data-target="econometrics"
+          data-vi="T&#224;i nguy&#234;n"
+          data-en="Resources"
+          >T&#224;i nguy&#234;n</a
+        >
+        <div class="drawer-lang">
+          <button class="lang-btn active" data-lang-switch="vi">VI</button>
+          <button class="lang-btn" data-lang-switch="en">EN</button>
         </div>
-        <ul class="quick-points">
-          <li>3+ years in product and web development</li>
-          <li>Focus: brand websites, dashboards, landing pages</li>
-          <li>Open to freelance and full-time opportunities</li>
-        </ul>
-      </section>
+      </div>
+    </div>
+    <div id="drawer-overlay" onclick="closeDrawer()"></div>
 
-      <section id="about" class="section about reveal">
-        <div class="section-title-wrap">
-          <p class="eyebrow">About</p>
-          <h2>Crafting useful products with strong visual identity</h2>
-        </div>
-        <div class="about-grid">
-          <p>
-            I enjoy turning rough ideas into polished products. My workflow
-            combines interface design, front-end development, and product
-            thinking so teams can move faster with less friction.
-          </p>
-          <p>
-            Outside work, I study storytelling, photography, and motion design
-            to bring richer emotion into digital experiences.
-          </p>
-        </div>
-      </section>
+    <div class="wrap">
+      <div id="home" class="section-page active">
+        <div class="home-layout">
+          <div class="home-photo">
+            <div class="profile-placeholder">
+              <i class="fa-regular fa-user"></i>
+              <span data-lang="vi">&#7842;nh c&#225; nh&#226;n</span>
+              <span data-lang="en">Profile photo</span>
+            </div>
+            <div class="carousel-wrap">
+              <div class="ring-3d">
+                <div class="bk-3d" style="--i: 0"><span>Web</span></div>
+                <div class="bk-3d" style="--i: 1"><span>UI</span></div>
+                <div class="bk-3d" style="--i: 2"><span>UX</span></div>
+                <div class="bk-3d" style="--i: 3"><span>Code</span></div>
+                <div class="bk-3d" style="--i: 4"><span>SEO</span></div>
+                <div class="bk-3d" style="--i: 5"><span>PWA</span></div>
+                <div class="bk-3d" style="--i: 6"><span>API</span></div>
+                <div class="bk-3d" style="--i: 7"><span>A11y</span></div>
+              </div>
+            </div>
+          </div>
 
-      <section id="skills" class="section reveal">
-        <div class="section-title-wrap">
-          <p class="eyebrow">Skills</p>
-          <h2>Tools and capabilities</h2>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-card">
-            <h3>Design</h3>
-            <p>Figma, design systems, visual direction, interaction design.</p>
-          </article>
-          <article class="skill-card">
-            <h3>Development</h3>
-            <p>HTML, CSS, JavaScript, React, responsive UI implementation.</p>
-          </article>
-          <article class="skill-card">
-            <h3>Product</h3>
-            <p>User flow mapping, feature prioritization, MVP definition.</p>
-          </article>
-          <article class="skill-card">
-            <h3>Collaboration</h3>
-            <p>Cross-functional teamwork, clear communication, fast iteration.</p>
-          </article>
-        </div>
-      </section>
+          <div>
+            <h1 class="home-name">
+              Ph&#7841;m Nguy&#7877;n<br />Qu&#7889;c Kh&#225;nh
+            </h1>
 
-      <section id="projects" class="section reveal">
-        <div class="section-title-wrap">
-          <p class="eyebrow">Projects</p>
-          <h2>Selected work</h2>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <p class="project-type">SaaS Dashboard</p>
-            <h3>Pulse Analytics</h3>
-            <p>
-              Redesigned a metrics dashboard and reduced average report review
-              time by 32%.
+            <p class="home-title" data-lang="vi">
+              L&#7853;p tr&#236;nh vi&#234;n Frontend &#183; X&#226;y d&#7921;ng website
+              c&#225; nh&#226;n v&#224; doanh nghi&#7879;p
             </p>
-            <a href="#" aria-label="Project link for Pulse Analytics">Case Study</a>
-          </article>
-          <article class="project-card">
-            <p class="project-type">Brand Website</p>
-            <h3>North Studio</h3>
-            <p>
-              Built a premium marketing website with custom motion and modular
-              sections for easy updates.
+            <p class="home-title" data-lang="en">
+              Frontend Developer &#183; Building personal and business websites
             </p>
-            <a href="#" aria-label="Project link for North Studio">Live Site</a>
-          </article>
-          <article class="project-card">
-            <p class="project-type">Mobile Product</p>
-            <h3>Habit Track</h3>
-            <p>
-              Defined onboarding and habit loop UX, increasing first-week
-              retention from 41% to 57%.
-            </p>
-            <a href="#" aria-label="Project link for Habit Track">Product Notes</a>
-          </article>
-        </div>
-      </section>
 
-      <section id="contact" class="section contact reveal">
-        <div class="section-title-wrap">
-          <p class="eyebrow">Contact</p>
-          <h2>Let us build something great</h2>
-        </div>
-        <p class="contact-copy">
-          If you have a project in mind, send me a message and we can start
-          with a short call.
-        </p>
-        <div class="contact-links">
-          <a class="btn" href="mailto:hello@example.com">hello@example.com</a>
-          <a class="text-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="text-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-      </section>
-    </main>
+            <div class="home-bio">
+              <p data-lang="vi">
+                T&#244;i t&#7853;p trung v&#224;o thi&#7871;t k&#7871; giao di&#7879;n r&#245;
+                r&#224;ng, d&#7877; d&#249;ng v&#224; ph&#7843;n h&#7891;i nhanh. M&#7909;c
+                ti&#234;u c&#7911;a t&#244;i l&#224; gi&#250;p m&#7895;i website truy&#7873;n
+                t&#7843;i &#273;&#432;&#7907;c c&#226;u chuy&#7879;n ri&#234;ng m&#7897;t
+                c&#225;ch m&#7841;ch l&#7841;c.
+              </p>
+              <p data-lang="en">
+                I focus on clean, readable interfaces with fast performance.
+                My goal is to make each website tell a clear story and feel
+                distinct.
+              </p>
+              <p data-lang="vi">
+                Website n&#224;y &#273;&#432;&#7907;c d&#7921;ng theo phong c&#225;ch
+                h&#7885;c thu&#7853;t c&#7911;a m&#7851;u tham chi&#7871;u, sau &#273;&#243;
+                tinh ch&#7881;nh m&#224;u s&#7855;c v&#224; n&#7897;i dung &#273;&#7875; ph&#249;
+                h&#7907;p v&#7899;i h&#236;nh &#7843;nh c&#225; nh&#226;n c&#7911;a t&#244;i.
+              </p>
+              <p data-lang="en">
+                This site follows an academic-style portfolio layout from your
+                reference, then customizes colors and profile content for my own
+                identity.
+              </p>
+            </div>
 
-    <footer class="site-footer">
-      <p><span id="year"></span> Minh Anh. Built with care.</p>
-    </footer>
+            <div class="home-links">
+              <a href="mailto:hello@yourdomain.com">
+                <i class="fa-regular fa-envelope"></i>
+                hello@yourdomain.com
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i>
+                LinkedIn
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ornament">&#183; &#183; &#183;</div>
+
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">Th&#7871; m&#7841;nh</div>
+          <div class="sec-heading" data-lang="en">Strengths</div>
+          <div class="interests">
+            <span class="int-pill" data-lang="vi">Thi&#7871;t k&#7871; giao di&#7879;n</span>
+            <span class="int-pill" data-lang="en">UI Design</span>
+            <span class="int-pill" data-lang="vi">Frontend Development</span>
+            <span class="int-pill" data-lang="en">Frontend Development</span>
+            <span class="int-pill" data-lang="vi">T&#7889;i &#432;u hi&#7879;u n&#259;ng</span>
+            <span class="int-pill" data-lang="en">Performance Optimization</span>
+            <span class="int-pill" data-lang="vi">Responsive Web</span>
+            <span class="int-pill" data-lang="en">Responsive Web</span>
+            <span class="int-pill" data-lang="vi">SEO c&#417; b&#7843;n</span>
+            <span class="int-pill" data-lang="en">SEO Basics</span>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">C&#244;ng vi&#7879;c g&#7847;n &#273;&#226;y</div>
+          <div class="sec-heading" data-lang="en">Recent work</div>
+          <div class="pub">
+            <div class="pub-cover-box">01</div>
+            <div class="pub-title" data-lang="vi">
+              Landing page cho d&#7883;ch v&#7909; c&#225; nh&#226;n v&#7899;i c&#7845;u
+              tr&#250;c chuy&#7875;n &#273;&#7893;i r&#245; r&#224;ng.
+            </div>
+            <div class="pub-title" data-lang="en">
+              Conversion-focused personal service landing page.
+            </div>
+            <div class="pub-meta">
+              <span data-lang="vi"
+                >Thi&#7871;t k&#7871; UI, d&#7921;ng giao di&#7879;n, t&#7889;i &#432;u
+                mobile &#183; 2026</span
+              >
+              <span data-lang="en"
+                >UI design, frontend build, mobile optimization &#183; 2026</span
+              >
+            </div>
+          </div>
+          <div class="pub">
+            <div class="pub-cover-box">02</div>
+            <div class="pub-title" data-lang="vi">
+              Thi&#7871;t k&#7871; l&#7841;i website portfolio cho freelancer trong
+              ng&#224;nh s&#225;ng t&#7841;o.
+            </div>
+            <div class="pub-title" data-lang="en">
+              Portfolio redesign for a creative freelancer.
+            </div>
+            <div class="pub-meta">
+              <span data-lang="vi"
+                >Nghi&#234;n c&#7913;u b&#7889; c&#7909;c, typography, tri&#7875;n khai
+                nhanh &#183; 2025</span
+              >
+              <span data-lang="en"
+                >Layout research, typography, fast implementation &#183; 2025</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="research" class="section-page">
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">D&#7921; &#225;n n&#7893;i b&#7853;t</div>
+          <div class="sec-heading" data-lang="en">Featured projects</div>
+          <div class="pub-list-numbered">
+            <div class="pub">
+              <div class="pub-title" data-lang="vi">
+                Website c&#225; nh&#226;n cho chuy&#234;n gia t&#432; v&#7845;n
+                t&#224;i ch&#237;nh.
+              </div>
+              <div class="pub-title" data-lang="en">
+                Personal website for a financial consultant.
+              </div>
+              <div class="pub-meta">
+                <span data-lang="vi">Vai tr&#242;: UI/UX, frontend, deploy &#183; 2026</span>
+                <span data-lang="en">Role: UI/UX, frontend, deployment &#183; 2026</span>
+              </div>
+            </div>
+            <div class="pub">
+              <div class="pub-title" data-lang="vi">
+                Trang gi&#7899;i thi&#7879;u doanh nghi&#7879;p mini cho th&#432;&#417;ng
+                hi&#7879;u &#7849;m th&#7921;c.
+              </div>
+              <div class="pub-title" data-lang="en">
+                Small business website for a food brand.
+              </div>
+              <div class="pub-meta">
+                <span data-lang="vi">Vai tr&#242;: concept, visual system, implementation &#183; 2025</span>
+                <span data-lang="en">Role: concept, visual system, implementation &#183; 2025</span>
+              </div>
+            </div>
+            <div class="pub">
+              <div class="pub-title" data-lang="vi">
+                H&#7879; th&#7889;ng trang m&#7851;u t&#225;i s&#7917; d&#7909;ng
+                cho c&#225;c d&#7921; &#225;n website t&#7883;nh.
+              </div>
+              <div class="pub-title" data-lang="en">
+                Reusable template system for static websites.
+              </div>
+              <div class="pub-meta">
+                <span data-lang="vi">Vai tr&#242;: architecture, component library &#183; 2025</span>
+                <span data-lang="en">Role: architecture, component library &#183; 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cv" class="section-page">
+        <div class="dl-bar">
+          <a class="btn-dl" href="#" data-lang="vi"
+            >T&#7843;i CV PDF <i class="fa-solid fa-download"></i
+          ></a>
+          <a class="btn-dl" href="#" data-lang="en"
+            >Download CV PDF <i class="fa-solid fa-download"></i
+          ></a>
+          <span data-lang="vi">B&#7841;n thay link file PDF th&#7921;c t&#7871; t&#7841;i &#273;&#226;y.</span>
+          <span data-lang="en">Replace this with your real PDF link.</span>
+        </div>
+
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">Kinh nghi&#7879;m</div>
+          <div class="sec-heading" data-lang="en">Experience</div>
+
+          <div class="cv-entry">
+            <div class="cv-year">2026 - Nay</div>
+            <div class="cv-body">
+              <h3 data-lang="vi">Freelance Frontend Developer</h3>
+              <h3 data-lang="en">Freelance Frontend Developer</h3>
+              <p data-lang="vi">Ph&#225;t tri&#7875;n website cho c&#225; nh&#226;n v&#224; doanh nghi&#7879;p nh&#7887;.</p>
+              <p data-lang="en">Building websites for personal brands and small businesses.</p>
+            </div>
+          </div>
+
+          <div class="cv-entry">
+            <div class="cv-year">2025 - 2026</div>
+            <div class="cv-body">
+              <h3 data-lang="vi">UI Engineer</h3>
+              <h3 data-lang="en">UI Engineer</h3>
+              <p data-lang="vi">T&#7889;i &#432;u dashboard n&#7897;i b&#7897;, c&#7843;i thi&#7879;n lu&#7891;ng thao t&#225;c.</p>
+              <p data-lang="en">Improved internal dashboards and task flows.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">H&#7885;c v&#7845;n</div>
+          <div class="sec-heading" data-lang="en">Education</div>
+
+          <div class="cv-entry">
+            <div class="cv-year">2020 - 2024</div>
+            <div class="cv-body">
+              <h3 data-lang="vi">C&#7917; nh&#226;n (thay b&#7857;ng tr&#432;&#7901;ng c&#7911;a b&#7841;n)</h3>
+              <h3 data-lang="en">Bachelor's Degree (replace with your school)</h3>
+              <p data-lang="vi">Ng&#224;nh h&#7885;c: (thay b&#7857;ng ng&#224;nh c&#7911;a b&#7841;n).</p>
+              <p data-lang="en">Major: (replace with your major).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">Li&#234;n h&#7879;</div>
+          <div class="sec-heading" data-lang="en">Contact</div>
+          <div class="contact-grid">
+            <div class="contact-row">
+              <div class="contact-label">Email</div>
+              <div><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">GitHub</div>
+              <div><a href="https://github.com" target="_blank" rel="noopener">github.com/yourname</a></div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">LinkedIn</div>
+              <div><a href="https://www.linkedin.com" target="_blank" rel="noopener">linkedin.com/in/yourname</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="econometrics" class="section-page">
+        <div class="sec">
+          <div class="sec-heading" data-lang="vi">T&#224;i nguy&#234;n h&#7885;c t&#7853;p</div>
+          <div class="sec-heading" data-lang="en">Learning resources</div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn">
+              <span data-lang="vi">HTML/CSS c&#417; b&#7843;n</span>
+              <span data-lang="en">HTML/CSS fundamentals</span>
+              <i class="fa-solid fa-chevron-right acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="acc-links">
+                <a class="acc-link" href="#" data-lang="vi">Ghi ch&#250; b&#224;i h&#7885;c</a>
+                <a class="acc-link" href="#" data-lang="en">Lesson notes</a>
+                <a class="acc-link" href="#" data-lang="vi">M&#227; m&#7851;u</a>
+                <a class="acc-link" href="#" data-lang="en">Code samples</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn">
+              <span data-lang="vi">JavaScript th&#7921;c h&#224;nh</span>
+              <span data-lang="en">JavaScript practice</span>
+              <i class="fa-solid fa-chevron-right acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="acc-links">
+                <a class="acc-link" href="#" data-lang="vi">B&#224;i t&#7853;p</a>
+                <a class="acc-link" href="#" data-lang="en">Exercises</a>
+                <a class="acc-link" href="#" data-lang="vi">Mini project</a>
+                <a class="acc-link" href="#" data-lang="en">Mini projects</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn">
+              <span data-lang="vi">T&#224;i nguy&#234;n deploy</span>
+              <span data-lang="en">Deployment resources</span>
+              <i class="fa-solid fa-chevron-right acc-arrow"></i>
+            </button>
+            <div class="accordion-body">
+              <div class="acc-links">
+                <a class="acc-link" href="#" data-lang="vi">GitHub Pages</a>
+                <a class="acc-link" href="#" data-lang="en">GitHub Pages</a>
+                <a class="acc-link" href="#" data-lang="vi">Checklist b&#224;n giao</a>
+                <a class="acc-link" href="#" data-lang="en">Launch checklist</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
