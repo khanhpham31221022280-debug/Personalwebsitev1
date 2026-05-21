@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minh Anh | Personal Website</title>
+    <meta
+      name="description"
+      content="Personal portfolio website for Minh Anh. Designer, developer, and product-minded builder."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-a" aria-hidden="true"></div>
+    <div class="bg-shape shape-b" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#home">MA.</a>
+      <nav class="main-nav" aria-label="Main menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-small" href="#contact">Work With Me</a>
+    </header>
+
+    <main id="home">
+      <section class="hero section reveal">
+        <p class="eyebrow">Hello, I am</p>
+        <h1>Minh Anh</h1>
+        <p class="lead">
+          I design and build digital experiences that feel human, clear, and
+          memorable.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Say Hello</a>
+        </div>
+        <ul class="quick-points">
+          <li>3+ years in product and web development</li>
+          <li>Focus: brand websites, dashboards, landing pages</li>
+          <li>Open to freelance and full-time opportunities</li>
+        </ul>
+      </section>
+
+      <section id="about" class="section about reveal">
+        <div class="section-title-wrap">
+          <p class="eyebrow">About</p>
+          <h2>Crafting useful products with strong visual identity</h2>
+        </div>
+        <div class="about-grid">
+          <p>
+            I enjoy turning rough ideas into polished products. My workflow
+            combines interface design, front-end development, and product
+            thinking so teams can move faster with less friction.
+          </p>
+          <p>
+            Outside work, I study storytelling, photography, and motion design
+            to bring richer emotion into digital experiences.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <div class="section-title-wrap">
+          <p class="eyebrow">Skills</p>
+          <h2>Tools and capabilities</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Design</h3>
+            <p>Figma, design systems, visual direction, interaction design.</p>
+          </article>
+          <article class="skill-card">
+            <h3>Development</h3>
+            <p>HTML, CSS, JavaScript, React, responsive UI implementation.</p>
+          </article>
+          <article class="skill-card">
+            <h3>Product</h3>
+            <p>User flow mapping, feature prioritization, MVP definition.</p>
+          </article>
+          <article class="skill-card">
+            <h3>Collaboration</h3>
+            <p>Cross-functional teamwork, clear communication, fast iteration.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section reveal">
+        <div class="section-title-wrap">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected work</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <p class="project-type">SaaS Dashboard</p>
+            <h3>Pulse Analytics</h3>
+            <p>
+              Redesigned a metrics dashboard and reduced average report review
+              time by 32%.
+            </p>
+            <a href="#" aria-label="Project link for Pulse Analytics">Case Study</a>
+          </article>
+          <article class="project-card">
+            <p class="project-type">Brand Website</p>
+            <h3>North Studio</h3>
+            <p>
+              Built a premium marketing website with custom motion and modular
+              sections for easy updates.
+            </p>
+            <a href="#" aria-label="Project link for North Studio">Live Site</a>
+          </article>
+          <article class="project-card">
+            <p class="project-type">Mobile Product</p>
+            <h3>Habit Track</h3>
+            <p>
+              Defined onboarding and habit loop UX, increasing first-week
+              retention from 41% to 57%.
+            </p>
+            <a href="#" aria-label="Project link for Habit Track">Product Notes</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact reveal">
+        <div class="section-title-wrap">
+          <p class="eyebrow">Contact</p>
+          <h2>Let us build something great</h2>
+        </div>
+        <p class="contact-copy">
+          If you have a project in mind, send me a message and we can start
+          with a short call.
+        </p>
+        <div class="contact-links">
+          <a class="btn" href="mailto:hello@example.com">hello@example.com</a>
+          <a class="text-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="text-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><span id="year"></span> Minh Anh. Built with care.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
